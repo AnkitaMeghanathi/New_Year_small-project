@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#210812" />
+  <title>નૂતન વર્ષાભિનંદન | Royal Utsav</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Serif+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="celebration" id="celebration">
+    <div class="ambient-glow"></div>
+    <div class="grain"></div>
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Royal Utsav home">
+        <span class="brand-symbol">✺</span>
+        <span>ROYAL <span class="brand-light">UTSAV</span></span>
+      </a>
+      <div class="top-label"><span class="live-dot"></span> A NEW BEGINNING</div>
+      <div class="nav-right">BESTU VARAS <span>•</span> 2026</div>
+    </header>
+
+    <div class="toran" aria-hidden="true">
+      <div class="toran-line"></div>
+      <div class="toran-items"><span>✿</span><span>❋</span><span>✿</span><span>❋</span><span>✿</span><span>❋</span><span>✿</span><span>❋</span><span>✿</span></div>
+      <div class="toran-hangings"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="side-note left-note"><span class="vertical-line"></span> A YEAR OF LIGHT & POSSIBILITIES</div>
+    <div class="side-note right-note">MADE WITH LOVE IN GUJARAT <span class="vertical-line"></span></div>
+
+    <section class="hero">
+      <div class="rangoli-area" aria-hidden="true">
+        <div class="rangoli-glow"></div>
+        <div class="rangoli">
+          <div class="rangoli-ring ring-one"></div><div class="rangoli-ring ring-two"></div>
+          <div class="rangoli-ring ring-three"></div><div class="rangoli-ring ring-four"></div>
+          <div class="rangoli-petals"></div><div class="rangoli-dots"></div>
+          <div class="rangoli-center"><b>શુભ</b><small>લાભ</small></div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="eyebrow"><span>✦</span><p>THE FESTIVAL OF NEW BEGINNINGS</p><span>✦</span></div>
+        <p class="small-gujarati">આપ સૌને નૂતન વર્ષના હાર્દિક અભિનંદન</p>
+        <h1 class="main-title">નૂતન વર્ષા<span>ભિનંદન</span></h1>
+        <div class="ornament"><span></span><b>✺</b><span></span></div>
+        <p class="message" id="mainWish">May this new year bring endless happiness, golden opportunities, beautiful memories and countless reasons to smile.</p>
+        <div class="wish-button-wrap">
+          <button class="wish-button" id="wishButton"><span>✧</span> CREATE YOUR WISH <span>✧</span></button>
+        </div>
+        <p class="signature">WITH WARM WISHES <span>♥</span> FROM YOUR FAMILY</p>
+      </div>
+    </section>
+
+    <div class="diya diya-left" id="diyaLeft" role="button" tabindex="0" aria-label="Light left diya" aria-pressed="false">
+      <div class="flame"></div><div class="diya-bowl"></div><div class="diya-base"></div><span class="diya-hint">TAP TO LIGHT</span>
+    </div>
+    <div class="diya diya-right" id="diyaRight" role="button" tabindex="0" aria-label="Light right diya" aria-pressed="false">
+      <div class="flame"></div><div class="diya-bowl"></div><div class="diya-base"></div><span class="diya-hint">TAP TO LIGHT</span>
+    </div>
+
+    <div class="quick-actions">
+      <button class="quick-btn" id="randomWishButton" title="Show another Gujarati wish">✦ <span>NEW WISH</span></button>
+      <button class="quick-btn" id="fireworksButton" title="Launch fireworks">✧ <span>CELEBRATE</span></button>
+      <button class="quick-btn" id="thaliButton" title="Open pooja thali">❀ <span>POOJA THALI</span></button>
+    </div>
+
+    <footer class="footer">
+      <span>✦ શુભારંભ ✦</span>
+      <span class="footer-center">સુખ • શાંતિ • સમૃદ્ધિ</span>
+      <span>CELEBRATE EVERY NEW BEGINNING</span>
+    </footer>
+
+    <!-- Personalized wish popup -->
+    <section class="wish-popup" id="wishPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+      <button class="close-popup" id="closePopup" aria-label="Close">×</button>
+      <div class="popup-icon">✺</div>
+      <p class="popup-kicker">A LITTLE FESTIVE MAGIC</p>
+      <h2 id="popupTitle">તમારી શુભેચ્છા બનાવો</h2>
+      <p class="popup-description">Add your name and create a warm Gujarati New Year greeting card.</p>
+      <label for="visitorName">YOUR NAME</label>
+      <input id="visitorName" type="text" maxlength="28" placeholder="Enter your name" autocomplete="name" />
+      <div class="generated-wish" id="generatedWish">નૂતન વર્ષાભિનંદન! આપનું નવું વર્ષ સુખ, શાંતિ અને સમૃદ્ધિથી ભરેલું રહે.</div>
+      <button class="popup-action" id="generateButton">GENERATE MY WISH</button>
+      <button class="download-action" id="downloadCardButton">↓ DOWNLOAD GREETING CARD</button>
+      <button class="share-action" id="shareButton">↗ SHARE WISH</button>
+      <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+    </section>
+    <div class="popup-backdrop" id="popupBackdrop"></div>
+
+    <!-- Interactive pooja thali -->
+    <section class="thali-panel" id="thaliPanel" aria-label="Interactive pooja thali">
+      <button class="close-popup" id="closeThali" aria-label="Close">×</button>
+      <p class="popup-kicker">A TRADITIONAL BLESSING</p>
+      <h2>સ્વાગત થાળી</h2>
+      <p class="thali-intro">Tap each sacred festive element to discover its meaning.</p>
+      <div class="thali">
+        <button class="thali-item thali-diya" data-item="દીવો — પ્રકાશ અને સકારાત્મકતાનું પ્રતીક." aria-label="Diya"><span>🪔</span><small>દીવો</small></button>
+        <button class="thali-item thali-flower" data-item="ફૂલ — પ્રેમ, સુંદરતા અને ભક્તિનું પ્રતીક." aria-label="Flower"><span>🌺</span><small>ફૂલ</small></button>
+        <button class="thali-item thali-kumkum" data-item="કંકુ — શુભતા અને મંગળતાનું પ્રતીક." aria-label="Kumkum"><span>🔴</span><small>કંકુ</small></button>
+        <button class="thali-item thali-rice" data-item="ચોખા — સમૃદ્ધિ અને પૂર્ણતાનું પ્રતીક." aria-label="Rice"><span>🌾</span><small>ચોખા</small></button>
+        <div class="thali-center">શુભ<br>લાભ</div>
+      </div>
+      <div class="thali-info" id="thaliInfo" aria-live="polite">Choose an item from the thali ✨</div>
+    </section>
+    <div class="thali-backdrop" id="thaliBackdrop"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
